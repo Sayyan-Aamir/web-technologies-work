@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume - Sayyan Abubakar</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    color: #333;
+  }
+
+  .header {
+    margin: 1% 10% 0 10%;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* Text color */
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 20px 10%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .header img {
+    border-radius: 8px;
+    width: 150px; /* Adjusted size */
+    height: 180px; /* Adjusted size */
+    object-fit: cover; /* Ensure the image covers the area */
+    margin-right: 20px; /* Space between image and info */
+  }
+
+  .header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .name {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+
+  .contact-info {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .main-content {
+    display: flex;
+    margin: 20px 10% 40px 10%;
+  }
+
+  .left-column {
+    flex-basis: 30%; /* Adjusted for sidebar */
+    padding-right: 20px; /* Space between columns */
+  }
+
+  .right-column {
+    flex-basis: 70%; /* Adjusted for main content */
+  }
+
+  .section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50; /* Green to match header */
+    margin-bottom: 15px;
+  }
+
+  .skills-list, .employment-history, .education {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .skills-list li, .employment-history li, .education li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .employment-history li .job-title, .education li .education-title {
+    font-weight: bold;
+  }
+
+  .employment-history li .job-description, .education li .education-description {
+    margin-top: 5px;
+    font-size: 14px; /* Slightly smaller for hierarchy */
+  }
+
+  .job-description {
+  list-style: inside; /* or 'disc' if you want standard bullets outside */
+  padding-left: 20px; /* Adjust based on your design preference */
+  margin: 10px 0; /* Adds more space around the list */
+}
+
+.job-description li {
+  margin-bottom: 10px; /* Adds space between list items */
+  font-size: 15px; /* Optional: Adjusts the font size *//* Optional: Adjusts the text color */
+}
+.job-duration {
+  margin: 1% 0 2% 0;
+}
+.education-duration {
+  margin: 1% 0 2% 0;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="./3048127.png" alt="Profile Picture">
+  <div class="header-info">
+    <div class="name">Sayyan Abubakar</div>
+    <div class="title">Full Stack Developer</div>
+    <div class="contact-info">
+      3620 Ettrickson Street, San Francisco, CA 94016, United States<br>
+      (+92) 313 8794099 | Sayyankhawaja@gmail.com
+    </div>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="left-column">
+    <div class="section skills-section">
+      <div class="section-title">Skills</div>
+      <ul class="skills-list">
+        <li>Excellent Communication Skills</li>
+        <li>Multitasking Skills</li>
+        <li>Office Technology Skills</li>
+        <li>Scheduling Skills</li>
+        <li>Bookkeeping Skills</li>
+        <li>Customer Service Skills</li>
+      </ul>
+    </div>
+    <div class="section internship-section" style="margin-top: 10%;">
+      <div class="section-title">Internship Experience</div>
+      <ul class="employment-history"> <!-- Using the same class for styling -->
+        <li>
+          <div class="job-title">Software Developer Intern, Tech Innovations Inc.</div>
+          <div class="job-duration">May 2020 – August 2020</div>
+          <ul class="job-description">
+            <li>Contributed to software development projects in a team setting.</li>
+            <li>Assisted in debugging and improving the functionality of existing applications.</li>
+            <li>Participated in code reviews</li>
+          </ul>
+        </li>
+        <li>
+          <div class="job-title">Web Developer Intern, StartUp Hub</div>
+          <div class="job-duration">June 2019 – August 2019</div>
+          <ul class="job-description">
+            <li>Developed and maintained websites using HTML, CSS, and JavaScript.</li>
+            <li>Worked closely with the design team to translate visual concepts into functional online experiences.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="right-column">
+    <div class="section profile-section">
+      <div class="section-title">Profile</div>
+      <div class="profile-text">
+        Full-stack developer skilled in crafting dynamic web solutions with a strong foundation in ASP.NET MVC, .NET Core, and Web API, complemented by front-end development using Angular 6+, React, and TypeScript. Proficient in C#, JavaScript, T-SQL, and MS SQL for robust back-end systems, with expertise in API integration and version control using Git. Dedicated to delivering high-quality, user-centric applications.
+      </div>
+    </div>
+    
+    <div class="section employment-history-section">
+      <div class="section-title">Employment History</div>
+      <ul class="employment-history">
+        <li>
+          <div class="job-title">Receptionist, Alfred Young Design, San Francisco</div>
+          <div class="job-duration" >November 2014 – August 2019</div>
+          <ul class="job-description">
+            <li>Greeted clients and provided them with information and superior service.</li>
+            <li>Handled calls, collected personal information, and managed schedules.</li>
+            <li>Maintained accurate client records and provided lead designers with excellent assistance.</li>
+          </ul>          
+        </li>
+        <li>
+          <div class="job-title">Receptionist, Little Star Day Spa, Los Angeles</div>
+          <div class="job-duration">June 2003 – October 2014</div>
+          <ul class="job-description">
+            <li>Greeted clients and provided them with information and superior service.</li>
+            <li>Handled calls, collected personal information, and managed schedules.</li>
+            <li>Maintained accurate client records and provided lead designers with excellent assistance.</li>
+          </ul> 
+        </li>
+      </ul>
+    </div>
+    
+    <div class="section education-section">
+      <div class="section-title">Education</div>
+      <ul class="education">
+        <li>
+          <div class="education-title">Associate of Communications, Pierce College, Los Angeles</div>
+          <div class="education-duration">August 2003 – May 2005</div>
+        </li>
+        <li>
+          <div class="education-title">High School Diploma, Maria Regina High School, Sherman Oaks</div>
+          <div class="education-duration">September 1999 – June 2003</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

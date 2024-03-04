@@ -1,0 +1,57 @@
+/* styles.css */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.resume-container {
+    width: 60%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.resume-header h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.resume-header p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.resume-section {
+    margin-bottom: 20px;
+}
+
+.resume-section h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #000;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+
+.resume-section h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.resume-section p, .resume-section li {
+    font-size: 0.9em;
+    color: #333;
+}
+
+.resume-section ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .resume-container {
+        width: 90%;
+    }
+}
