@@ -240,9 +240,27 @@ AOS.init();
       <a href="#"><img src="./images/download (8).png" alt="LinkedIn"></a>
       <a href="#"><img src="./images/download (10).png" alt="LinkedIn"></a>
     </div>
+    
   </div>
-  <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24321.141098571404!2d0.062443059550392!3d51.56161675963993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8d63d58aaaaab%3A0x50afb9c0d83330d!2s13+Thurlestone+Ave%2C+Ilford+IG3+9DS%2C+UK!5e0!3m2!1sen!2s!4v1511025364254" width="600" height="450" style="border:0" allowfullscreen></iframe>
+
+  <div class="form-container">
+    <h2 style="margin: 0px 0px;">INFORMATION</h2>
+
+    <form id="contact-form" action="/submit-your-form-endpoint" method="post">
+      <div class="form-group">
+          <input type="text" id="userName" name="userName" required placeholder="Name">
+      </div>
+      <div class="form-group">
+          <input type="email" id="userEmail" name="userEmail" required placeholder="Email">
+      </div>
+      <div class="form-group">
+          <input type="number" id="userAge" name="userAge" required placeholder="Age" min="18" max="100">
+      </div>
+      <div class="form-group">
+          <input type="text" id="userCountry" name="userCountry" required placeholder="Country">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   </div>
 </div>
 

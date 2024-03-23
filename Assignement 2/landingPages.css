@@ -513,7 +513,7 @@ img {
 
 .testimonial span {
   font-weight: bold;
-  display: block; /* Makes the name appear on a new line */
+  display: block;
 }
 
 
@@ -521,9 +521,90 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding:5px;
+  background-color: whitesmoke;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.form-container {
+  flex: 1;
+  margin-left: 70px;
+}
+
+#contact-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+}
+
+#contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+#contact-form .form-group input,
+#contact-form .form-group textarea {
+  width: calc(100% - 20px); /* Full width minus padding */
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+#contact-form .form-group input:focus,
+#contact-form .form-group textarea:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+#contact-form .form-group input::placeholder,
+#contact-form .form-group textarea::placeholder {
+  color: #999;
+}
+
+#contact-form button {
+  padding: 5px 10px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: #003d82;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container {
+    width: 60%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  #contact-form .form-group input,
+  #contact-form .form-group textarea {
+    width: calc(100% - 20px); /* Adjusted for mobile */
+  }
+}
+
+
+/* .contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 20px;
   background-color: whitesmoke
-}
+} */
 
 .contact-info img {
   max-width: 150px; 
@@ -560,23 +641,4 @@ img {
   font-size: 20px;
   display: none;
   margin: 5px 0;
-}
-
-.map iframe {
-  border-radius: 8px;
-  border: none;
-  height: 300px; /* Adjust height as needed */
-  width: 700px; /* Adjust width as needed */
-  margin-left: 20px;
-}
-
-/* Responsive layout adjustments */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
-
-  .map iframe {
-    width: 100%;
-  }
 }
