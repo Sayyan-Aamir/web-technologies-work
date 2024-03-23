@@ -1,0 +1,254 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraWell - Your perfect Adventure</title>
+    <link rel="stylesheet" href="/landingPages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+    <script>
+    function toggleImages() {
+    const firstSet = document.querySelectorAll('#first-set');
+    const secondSet = document.querySelectorAll('#second-set');
+
+    firstSet.forEach(img => img.hidden = !img.hidden);
+    secondSet.forEach(img => img.hidden = !img.hidden);
+    }
+    </script>
+
+    <script>
+    function toggleImages(direction) {
+        const firstSet = document.querySelectorAll('.image-wrapper[id="first-set"]');
+        const secondSet = document.querySelectorAll('.image-wrapper[id="second-set"]');
+    
+        // Initially set both sets to not be displayed
+        firstSet.forEach(img => img.hidden = true);
+        secondSet.forEach(img => img.hidden = true);
+    
+        // Toggle visibility of image sets based on direction
+        if (direction === 'right') {
+            // Display the second set and hide the first set
+            firstSet.forEach(img => img.hidden = true);
+            secondSet.forEach(img => img.hidden = false);
+        } else if (direction === 'left') {
+            // Display the first set and hide the second set
+            firstSet.forEach(img => img.hidden = false);
+            secondSet.forEach(img => img.hidden = true);
+        }
+    }
+    </script>
+    
+<script>
+AOS.init();
+</script>
+      
+</head>
+<body>
+
+<header class="hero">
+
+<video autoplay muted loop id="background-video">
+            <source src="./Video/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+</video>
+
+<nav class="navbar">
+        <div class="logo">TraWell</div>
+        <div class="nav-links">
+        <a href="#">Discover</a>
+        <a href="#">Plan a trip</a>
+        <a href="#">All tours</a>
+        <a href="#">Check flights</a>
+        <a href="#">Blog</a>
+        </div>
+</nav>
+
+<div class="search-container">
+<h1 style="text-align: center;margin-top:20%;">EXPLORE THE WORLD</h1>
+<p style="text-align: left;justify-content: center;margin-left: 3%;">TraWell streamlines your travel coordination with cutting-edge technology. Perfect for agencies of any size, our system makes planning and booking effortless, propelling your business towards new heights of success.</p>
+</div>
+
+<div class="image-gallery-wrapper">
+
+        <div class="image-gallery">
+            <div class="image-wrapper" id="first-set">
+                <img src="/images/Lake Como, Italy.jpg" alt="Maldives">
+                <div class="hover-text">Lake Como, Italy</div>
+              </div>
+            
+              <div class="image-wrapper" id="first-set">
+                <img src="/images/bali (2).jpg" alt="Bali">
+                <div class="hover-text">BALI</div>
+              </div>
+    
+              <div class="image-wrapper" id="second-set" hidden>
+                <img src="/images/Banff National Park, Canada.jpg" alt="Place Name">
+                <div class="hover-text">Banff National Park, Canada</div>
+              </div>
+            
+              <div class="image-wrapper" id="second-set" hidden>
+                <img src="/images/Lake Bled, Slovenia (1).jpg" alt="Another Place Name">
+                <div class="hover-text">Lake Bled, Slovenia</div>
+              </div>
+        </div>
+</div>
+
+<div style="font-size: larger; text-align: center; margin-top: 28%; margin-left: 46%; clear: both; justify-content: center; align-items: center;">
+        <div id="left-arrow" class="arrow-container" onclick="toggleImages('left')">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+      
+        <div id="right-arrow" class="arrow-container" onclick="toggleImages('right')">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+</div>
+      
+</header>
+
+<div style="background-color: whitesmoke;">
+
+    <div class="why-choose-us" style="background-color: whitesmoke;"  data-aos="fade-right" data-aos-duration="1000">
+        <h2>Why Choose Our Tour Management System?</h2>
+        <!-- <p>Welcome to the next horizon in Travel Coordination! Our state-of-the-art Tour Management System is crafted to optimize and refine your tour operations. Discover why our platform is the quintessential choice for navigating your tour arrangements:</p> -->
+    </div>
+    
+    <div class="features-container" style="background-color: whitesmoke;" data-aos="fade-right" data-aos-duration="1000">
+        <div class="feature-box">
+            <div class="icon-circle">
+                <i class="fas fa-plane" style="font-size: 130%;"></i></div>
+                <h3 style="text-align: center;">500+ Destinations</h3>
+          <p>Explore Over 500 Destinations! Discover a treasure trove of unique cultures, breathtaking landscapes, and unforgettable experiences waiting for you across the globe.</p>
+        </div>
+      
+        <div class="feature-box">
+            <div class="icon-circle">
+                <i class="fas fa-dollar-sign" style="font-size: 150%;"></i></div>
+                <h3 style="text-align: center;">Best Price in Industry</h3>
+          <p>Discover unmatched value with our industry-leading prices. Our strategic partnerships and efficient operations allow us to provide top-notch service at a fraction of the cost. nvest in quality experiences without the premium price tag.</p>
+        </div>
+      
+        <div class="feature-box">
+            <div class="icon-circle">
+                <i class="fas fa-headset" style="font-size: 150%;"></i></div>
+                <h3 style="text-align: center;">Great Customer Support</h3>
+          <p>Experience unparalleled customer support. Our dedicated team ensures that your queries are handled with the utmost care, providing solutions promptly and effectively, guaranteeing your satisfaction.</p>
+        </div>
+    
+      </div>
+    
+      <div class="features-container" style="margin-top: 20px;background-color: whitesmoke;" data-aos="fade-right" data-aos-duration="1000">
+        <div class="feature-box">
+            <div class="icon-circle">
+                <i class="fas fa-calendar-check" style="font-size: 150%;"></i></div>
+                <h3 style="text-align: center;">Super Fast Booking</h3>
+                <p>Embark on a seamless travel experience with Super Fast Booking! Our streamlined process ensures that your dream journey is just a few clicks away—fast, effortless, and secure. Get ready to explore the world with ease.</p>
+            </div>
+      
+        <div class="feature-box">
+            <div class="icon-circle">
+                <i class="fas fa-satellite-dish" style="font-size: 150%;"></i></div>
+                  <h3 style="text-align: center;">Real-time Tracking</h3>
+                  <p>Real-time tracking enables the live monitoring of an asset's position, providing up-to-the-minute updates on its location for enhanced operational awareness and decision-making. This feature is pivotal for dynamic route optimization, ensuring time-sensitive deliveries, and maintaining high service standards.</p>
+        </div>
+      
+        <div class="feature-box">
+            <div class="icon-circle">
+                <i class="fas fa-times-circle" style="font-size: 150%;"></i></div>
+                <h3 style="text-align: center;">Flexible Cancellation Policies</h3>
+                <p>Enjoy peace of mind with our customer-friendly cancellation options. Whether plans change or the unexpected happens, we offer flexible solutions to ensure you can book with confidence, knowing that you can adapt your travel plans without heavy penalties.</p>
+            </div>
+        
+      </div>
+    
+      <div class="about-section" style="background-color: whitesmoke;" data-aos="fade-right" data-aos-duration="1000">
+        <div class="image-container">
+            <img src="/images/AboutUs(1).jpg" alt="Maldives">
+        </div>
+        <div class="content-container">
+          <div class="about-title">About Us</div>
+          <div class="about-text">
+            Welcome to Trawell, the compass that guides your wanderlust to its ultimate fulfillment. We are not just a tour management system; we are the artisans of your travel dreams, crafting experiences that resonate with your spirit of adventure.
+          </div>
+          <button class="read-more-button">Read More</button>
+        </div>
+      </div>
+      
+</div>
+
+<section class="testimonials" data-aos="fade-right" data-aos-duration="1000">
+
+  <!-- <video autoplay muted loop id="background-video">
+    <source src="./Video/vv.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video> -->
+
+  <h1 style="color: black;">What Our Clients <strong>Say!</strong></h1>
+
+  <div class="testimonial">
+    <img src="./images/client1.png" alt="Client photo">
+    <p>Onboard new employees, approve time off requests, review shift trades, and fill shifts in seconds.</p>
+    <span>Dave Rove</span>
+  </div>
+
+  <div class="testimonial">
+    <img src="./images/client2.png" alt="Client photo">
+    <p>Onboard new employees, approve time off requests, review shift trades, and fill shifts in seconds.</p>
+    <span>Dave Rove</span>
+  </div>
+
+  <div class="testimonial">
+    <img src="./images/client3.png" alt="Client photo">
+    <p>Onboard new employees, approve time off requests, review shift trades, and fill shifts in seconds.</p>
+    <span>Dave Rove</span>
+  </div>
+
+
+  <div class="testimonial">
+    <img src="./images/client1.png" alt="Client photo">
+    <p>Onboard new employees, approve time off requests, review shift trades, and fill shifts in seconds.</p>
+    <span>Dave Rove</span>
+  </div>
+
+  <div class="testimonial">
+    <img src="./images/client2.png" alt="Client photo">
+    <p>Onboard new employees, approve time off requests, review shift trades, and fill shifts in seconds.</p>
+    <span>Dave Rove</span>
+  </div>
+
+  <div class="testimonial">
+    <img src="./images/client3.png" alt="Client photo">
+    <p>Onboard new employees, approve time off requests, review shift trades, and fill shifts in seconds.</p>
+    <span>Dave Rove</span>
+  </div>
+
+</section>
+
+<div class="contact-container" data-aos="fade-right" data-aos-duration="1000">
+  <div class="contact-info">
+    <h2>CONTACT US</h2>
+    <p><strong>ADDRESS:</strong> IG3 9DS, london, United Kingdom</p>
+    <p><strong>CONTACT INFO:</strong> 02033980121</p>
+    <p><strong>EMAIL:</strong> support@workforceverse.com</p>
+    <div class="social-media">
+      <a href="#"><img src="./images/download (7).png" alt="Facebook"></a>
+      <a href="#"><img src="./images/download (9).png" alt="Twitter"></a>
+      <a href="#"><img src="./images/download (8).png" alt="LinkedIn"></a>
+      <a href="#"><img src="./images/download (10).png" alt="LinkedIn"></a>
+    </div>
+  </div>
+  <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24321.141098571404!2d0.062443059550392!3d51.56161675963993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8d63d58aaaaab%3A0x50afb9c0d83330d!2s13+Thurlestone+Ave%2C+Ilford+IG3+9DS%2C+UK!5e0!3m2!1sen!2s!4v1511025364254" width="600" height="450" style="border:0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+        AOS.init();
+</script>
+
+</body>
+</html>

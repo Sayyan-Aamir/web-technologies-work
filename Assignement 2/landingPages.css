@@ -1,0 +1,582 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+}
+
+#background-video { 
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+  background-size: cover;
+}
+
+.image-gallery-wrapper {
+  position: relative;
+  height: 200px; /* Or however tall you need it to be */
+}
+
+.image-gallery {
+  position: absolute;
+  top: 210%; /* Adjust this value to move your images up */
+  left: 0;
+  right: 0;
+}
+
+/* .hero {
+  background-image: url('https://images.unsplash.com/photo-1444525567579-c025cd07de6a?q=80&w=1858&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  height: 120vh;
+} */
+
+.hero {
+  position: relative;
+  /* overflow: hidden; */
+  height: 120vh; /* Adjust height as needed */
+  color: white;
+  text-align: center;
+}
+
+.arrow-container {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.arrow-container i:hover{
+  background-color: white;
+  color: black;
+  align-items: center;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.search-box {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.search-box input[type="text"] {
+  border: none;
+  padding: 10px;
+  margin: 0 5px;
+  color: black;
+  border-radius: 7px;
+}
+
+.search-box button {
+  padding: 10px;
+  background-color: #333; /* Dark background for the button */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #555; /* Lighter background on hover */
+}
+
+.search-container {
+  float: left;
+  position: relative;
+  background-size: cover;
+  padding: 100px 20px;
+  margin-right: 52%;
+}
+
+.search-containers {
+  float: right;
+  position: relative;
+  background-size: cover;
+  margin-left: 20%;
+}
+
+.search-containers img {
+  width: 40%;
+  margin: 1%;
+  vertical-align: middle;
+  margin-top: -60%;
+}
+
+.image-wrapper {
+  float: right;
+  position: relative;
+  background-size: cover;
+  margin-top: -30%;
+}
+
+.image-wrapper .hover-text {
+  position: absolute;
+  width: 5%;
+  height: 30px;
+  bottom: 10px;
+  left: 5px;
+  color: white;
+  font-size: 20px;
+  padding-top: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  display: none;
+  margin-top: -80%;
+  width: calc(100% - 8%);
+  display: block;
+}
+
+/* 
+.search-containers img{
+  margin-top: -120%;
+  color: white;
+  margin-left: -50%;
+} */
+
+h1 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 3em; /* Adjust as needed */
+}
+
+.search-fields {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.search-field .input-icon-container {
+  margin-left: 2px;
+  margin-right: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-field i {
+  position: absolute;
+  margin-left: 10px;
+  color: #aaa; /* Change the color if needed */
+}
+
+.search-field input {
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+img {
+  max-width: 320px;
+  float: left;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+/* .video-container video {
+  height: 80%; 
+  margin-right: -20%;
+  border-radius: 10px;
+  width: 25%;
+  vertical-align: middle;
+  margin-top: -8%;
+} */
+
+/* .video-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  height: 100%;
+  width: 20%; 
+  vertical-align: middle;
+  border-radius: 10px;
+  margin-right: -22%;
+} */
+
+.video-container {
+  position: relative;
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+}
+
+.video-container video {
+  width: 50%;
+  margin-right: -40%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+/* EXTRA CSS */
+
+.why-choose-us {
+  padding: 40px;
+  text-align: center;
+  border-radius: 6px;
+  /* margin-bottom: 2%; */
+  color: black;
+  /* background-color: whitesmoke; */
+  /* background-image: url('https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg?auto=compress&cs=tinysrgb&w=600'); */
+  /* background-size: cover; */
+  background-position: center;
+  position: relative;
+  /* z-index: 1; */
+}
+
+
+.why-choose-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background: rgba(0, 0, 0, 0.5); */
+  border-radius: 6px; /* Ensures the overlay follows the border radius of the section */
+  z-index: -1;
+}
+
+.why-choose-us h2 {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.why-choose-us p {
+  color: black;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  width: 300px;
+  margin: 10px;
+  text-align: left;
+}
+
+.icon-circle {
+  background-color: whitesmoke;
+  border-radius: 50%;
+  color: black;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.icon-circle img {
+  width: 30px;
+  height: 30px; 
+}
+
+.feature-item h3 {
+  color: black;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  color: black;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-item {
+    width: auto;
+    text-align: center;
+  }
+
+  .icon-circle {
+    margin-bottom: 10px;
+  }
+}
+
+
+.features-container {
+  display: flex;
+  overflow-y: hidden;
+  justify-content: center;
+  margin: 20px;
+  margin-top: -50px;
+}
+
+.feature-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-box:hover {
+  transform: scale(1.08); /* Adjust the scale value to your preference */
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2); /* This adds a shadow to give a "lifted" effect */
+  z-index: 10; /* This ensures the hovered box rises above the others */
+}
+
+.icon-bg {
+  background-color: #eee; /* Placeholder color */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 50%;
+}
+
+.feature-box h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.feature-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.explore-button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #6200ee;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+  background-color: #3700b3;
+}
+
+@media (max-width: 768px) {
+  .features-container {
+    flex-direction: column;
+  }
+}
+
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; /* Adjust the color to match your design */
+  color: black;
+}
+
+.image-container {
+  margin-left: -15%;
+  background-position: center;
+  height: 80%;
+}
+
+.content-container {
+  flex: 1;
+  padding: 20px;
+  max-width: 500px;
+}
+
+.about-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  margin-bottom: 20px;
+}
+
+.read-more-button {
+  padding: 10px 20px;
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  border-radius: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: white;
+  color: black; /* Adjust the hover color to match your design */
+}
+
+.testimonials {
+  /* background-color: whitesmoke; */
+  text-align: center;
+  padding: 40px;
+  color: black;
+}
+
+.testimonials h1 {
+  margin-bottom: 20px;
+}
+
+.testimonial {
+  display: inline-block;
+  width: 22%;
+  margin: 10px;
+  background-color: #FFFFFF; /* For the white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.testimonial:hover {
+  transform: scale(1.08); /* Adjust the scale value to your preference */
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2); /* This adds a shadow to give a "lifted" effect */
+  z-index: 10; /* This ensures the hovered box rises above the others */
+}
+
+.testimonial img {
+  width: 80px; /* Adjust as needed */
+  height: 80px; /* Adjust as needed */
+  border-radius: 50%; /* Makes the image round */
+  margin-bottom: 10px;
+  border: 2px solid #6200EA; /* Replace with the appropriate purple shade */
+}
+
+.testimonial p {
+  font-size: 14px;
+  color: #333; /* Dark text color */
+  margin-bottom: 10px;
+}
+
+.testimonial span {
+  font-weight: bold;
+  display: block; /* Makes the name appear on a new line */
+}
+
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: whitesmoke
+}
+
+.contact-info img {
+  max-width: 150px; 
+  margin: 5px 0;
+}
+
+.contact-info {
+  max-width: 330px;
+  margin-left: 12%;
+}
+
+.contact-info h2 {
+  margin: 10px 0;
+}
+
+.contact-info p {
+  margin: 15px 0;
+}
+
+.social-media a img {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  border: 0px solid whitesmoke;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-media a img:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+.contact-links a {
+  font-size: 20px;
+  display: none;
+  margin: 5px 0;
+}
+
+.map iframe {
+  border-radius: 8px;
+  border: none;
+  height: 300px; /* Adjust height as needed */
+  width: 700px; /* Adjust width as needed */
+  margin-left: 20px;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .map iframe {
+    width: 100%;
+  }
+}
