@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Korea JoongAng Daily</title>
+<link rel="stylesheet" href="/MidTermLab.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+  }
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .nav-bar {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-bar li {
+    padding: 0 10px;
+  }
+  .headline {
+    font-size: 0.8em; 
+  }
+  .headline p {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .clear {
+    clear: both;
+  }
+  img {
+    vertical-align: middle;
+    width: 10%;
+    height: auto;
+  }
+  .nav-container {
+    background-color: #fff;
+    border-bottom: 4px solid red;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+  }
+  .nav-item {
+    text-align: center;
+  }
+  .nav-link {
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .nav-description {
+    color: grey;
+    font-size: 0.8em;
+  }
+  .divider {
+    border-left: 1px solid grey;
+    height: 40px;
+  }
+  .date {
+    color: red;
+    font-size: 0.9em;
+  }
+
+  .gallery {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+  .gallery-item {
+    width: 32%;
+    margin-right: 2%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+  .gallery-item p {
+    margin-top: 0.5em;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .gallery-item:last-child {
+    margin-right: 0;
+  }
+
+  .editors-pick-container {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .main-article {
+    flex: 1;
+    margin-right: -180px;
+    margin-left: 10px;
+  }
+
+  .main-article img {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 8px;
+  }
+  .main-article p {
+    margin-top: 0%;
+    font-size: 18px;
+  }
+
+  .side-articles {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .side-article {
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  .side-article img {
+    width: 150px;
+    height: auto;
+    border-radius: 6px;
+    margin-right: 10px;
+  }
+
+  .side-article-title {
+    align-items: center;
+    margin-top: 5%;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .title {
+    font-weight: bold;
+    color: red;
+    margin-bottom: 2px;
+    margin-top: 5px;
+  }
+
+  .title::before {
+    content: "★ ";
+    color: red;
+  }
+  .right-side-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.main-news {
+  margin-bottom: 20px;
+}
+
+.main-news h1 {
+  font-size: 24px; 
+  font-weight: bold;
+  margin-bottom: 8px; 
+}
+
+.main-news p {
+  font-size: 16px;
+  font-weight: normal;
+  color: #333; 
+}
+
+.main-news img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px; 
+}
+
+.news-container {
+  display: flex; 
+  align-items: center; 
+  margin-top: 2%;
+}
+
+.news-image {
+  flex: 0 0 auto; 
+  width: 50%; 
+}
+
+.news-image img {
+  width: 100%;
+  height: auto; 
+  border-radius: 8px; 
+}
+
+.news-content {
+  flex: 1;
+  padding-left: 20px; 
+}
+
+.news-content h1 {
+  font-size: 24px; 
+  font-weight: bold; 
+  margin-bottom: 8px; 
+  color: #000; 
+}
+
+.news-content h1::after {
+    content: " >   ";
+    color: black;
+  }
+
+.news-content p {
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <img src="https://koreajoongangdaily.joins.com/resources/images/2023/logo_kjd.png" alt="Korea JoongAng Daily Logo">
+        <img src="https://koreajoongangdaily.joins.com/resources/images/2023/logo_nyt.png" alt="The New York Times Logo">
+        <ul class="nav-bar">
+          <li>Spotlight</li>
+          <li>Why?</li>
+          <li>Graci Kim</li>
+          <li>Weird flex, but OK</li>
+          <li>Cherry cheats</li>
+        </ul>
+      </div>
+
+<img style="width: 100%;" src="https://koreajoongangdaily.joins.com/resources/images/2023/patturn-bar.png">
+
+<div class="nav-container">
+    <nav class="nav-bar">
+      <div class="nav-item date">April 01, 2024</div>
+      <div class="divider"></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Spotlight</a>
+        <span class="nav-description">Korean culture explained</span>
+      </div>
+      <div class="divider"></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Why?</a>
+        <span class="nav-description">Korean culture explained</span>
+      </div>
+      <div class="divider"></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Graci Kim</a>
+        <span class="nav-description">Author on mythology</span>
+      </div>
+      <div class="divider"></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Weird flex, but OK</a>
+        <span class="nav-description">Learning to pose like a Korean bodybuilder</span>
+      </div>
+      <div class="divider"></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Cherry cheats</a>
+        <span class="nav-description">Blossom festival overcharging</span>
+      </div>
+    </nav>
+  </div>
+
+  <div class="top-bar" style="float: left; width: 30%;">
+    <img id="dynamic-img" style="width: 100%; height: auto;" src="https://koreajoongangdaily.joins.com/data/photo/2024/04/01/bc2d0d69-165a-4880-ae39-dd589a3096b4.jpg">
+    <p id="img-source" style="display: none; text-align: left;margin-top: 70%;"></p>
+  </div>
+
+  <div class="news-container">
+    <div class="news-image" style="margin-top: -10%;">
+        <div class="headline" style="margin-top: 2%;">
+            <h1>Yoon doubles down on 2,000 seat hike in med schools in public address</h1>
+            <p>President Yoon Suk Yeol underscored that a hike of 2,000 seats in the medical school...</p>
+          </div>
+    </div>
+    <div class="news-content">
+      <h1>Latest News</h1>
+    <ol>
+        <li style="margin-bottom: 10px">Top political figures gather this week to discuss urgent measures in response...</li>
+        <li style="margin-bottom: 10px">Top political figures gather this week to discuss urgent measures in response...</li>
+        <li style="margin-bottom: 10px">Top political figures gather this week to discuss urgent measures in response...</li>
+        <li style="margin-bottom: 10px">Top political figures gather this week to discuss urgent measures in response...</li>
+        <li style="margin-bottom: 10px">Top political figures gather this week to discuss urgent measures in response...</li>
+        <li>Top political figures gather this week to discuss urgent measures in response...</li>
+    </ol>
+    </div>
+  </div>
+  
+  <div class="clear"></div>
+
+  <div class="gallery" style="width: 60%;margin-top: 2%;">
+    <div class="gallery-item">
+        <img width="40%" src="https://koreajoongangdaily.joins.com/data/photo/2024/04/01/2bb4348c-708c-42ae-b7b8-48047d906e58.jpg">
+      <p>U.S. soldier arrested in drunk driving accident...</p>
+    </div>
+    <div class="gallery-item">
+        <img src="https://koreajoongangdaily.joins.com/data/photo/2024/04/01/54477b9a-e9c1-4628-8888-99fd6dc7cb85.jpg">
+      <p>Omega X's contract with former agency officially...</p>
+    </div>
+    <div class="gallery-item">
+        <img src="https://koreajoongangdaily.joins.com/data/photo/2024/04/01/571bc0cf-700c-487e-8ca9-1322a039d5f3.jpg">
+      <p>Eagles take flight to lead KBO for 1st time in decade</p>
+    </div>
+  </div>
+
+  <img style="width: 100%;" src="https://koreajoongangdaily.joins.com/resources/images/2023/patturn-bar.png">
+
+  <div class="title" style="margin-left: 10px;">EDITOR'S PICK</div>
+
+  <div class="editors-pick-container">
+    <div class="main-article">
+      <img src="https://koreajoongangdaily.joins.com/data/photo/2024/03/30/ebc94135-a83d-4cde-b175-730182a8079e.jpg" alt="Dongdaemun hangs on by a thread as Chinese apps move in">
+      <p>Dongdaemun hangs on by a thread as Chinese apps move in</p>
+    </div>
+    
+    <div class="side-articles" >
+      <div class="title" style="margin-top: -10%;">NEWS</div>
+      <div class="side-article" style="margin-top: -10%;margin-bottom: -10px;">
+        <img src="https://koreajoongangdaily.joins.com/data/photo/2024/03/29/ca1351e0-accb-4f06-8590-a47b16ff0dd7.jpg" alt="I should live like Son: Footballer's positive vibes go viral">
+        <div class="side-article-title">‘I should live like Son’: Footballer's positive vibes go viral</div>
+      </div>
+      <div class="side-article" style="margin-top: -5%;margin-bottom: -10px;">
+        <img src="https://koreajoongangdaily.joins.com/data/photo/2024/03/28/a398f07c-c5b7-482e-823c-ec62650b55c4.jpg" alt="Hotels will no longer provide disposable items">
+        <div class="side-article-title">Hotels will no longer provide disposable items</div>
+      </div>
+      <div class="side-article" style="margin-top: -5%;margin-bottom: -10px;">
+        <img src="https://koreajoongangdaily.joins.com/data/photo/2024/03/27/f2096367-85e5-4473-985e-7db67393a795.jpg" alt="Chanel Korea hikes prices of popular handbags">
+        <div class="side-article-title">Chanel Korea hikes prices of popular handbags</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // Image click event handler
+      $('#dynamic-img').click(function() {
+        // Get the source of the image
+        var imgSource = $(this).attr('src');
+        // Set the text of the 'img-source' element and toggle its display
+        $('#img-source').text('Source: ' + imgSource).toggle();
+      });
+    });
+  </script>
+
+</body>
+</html>
