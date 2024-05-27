@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firstflight Travels</title>
+    <link rel="icon" href="/public/Images/logo.png">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="icon" href="/public/Images/logo.png">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="/node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- Background Video & Header -->
+    <div class="banner">   
+
+    <!-- Header -->
+    <div class="content" id="home"> 
+        <nav>
+            <img src="/public/Images/logo.png" class="logo" alt="Logo" title="FirstFlight Travels">
+            <ul class="navbar">
+                <li>
+                    <a href="#home">Home</a>
+                    <a href="#locations">Locations</a>
+                    <a href="#package">Packages</a>
+                    <a href="./about.html">About Us</a>
+                    <a href="./about.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section style="margin-top: 10%;">
+            <div class="container" style="margin-left: 35%;">
+              <h2>Travel Booking Form</h2>
+              <form id="bookingForm">
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="numPeople">Number of People</label>
+                    <input type="number" class="form-control" id="numPeople" name="numPeople" placeholder="Number of People">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="place">Place</label>
+                    <select id="place" name="place" class="form-control">
+                      <option selected>Choose...</option>
+                      <% products.forEach(function(product) { %>
+                        <option><%= product.PlaceNames %></option>
+                      <% }); %>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="fromDate">From Date</label>
+                    <input type="date" class="form-control" id="fromDate" name="fromDate">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="toDate">To Date</label>
+                    <input type="date" class="form-control" id="toDate" name="toDate">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+              </form>
+            </div>
+        </section>
+
+    </div>
+
+    </div>
+
+    <!-- Toast Message -->
+    <div class="toast" id="loginToast" style="position: absolute; top: 20px; right: 20px; min-width: 200px;" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+      <div class="toast-header">
+        <strong class="mr-auto text-danger">Error</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body" style="margin-top: 8%;">
+        You need to be logged in to submit the booking.
+      </div>
+    </div>
+
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Check if JWT token exists
+    const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+    if (!token) {
+      // Show toast message if no token
+      $('#loginToast').toast('show');
+    } else {
+      // Submit the form to add a new tour
+      const form = event.target;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Authorization': token.split('=')[1]
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          window.location.href = '/placeListPage';
+        } else {
+          alert('Error adding new tour');
+        }
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

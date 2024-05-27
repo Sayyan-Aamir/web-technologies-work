@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie List View</title>
+    <link rel="icon" href="/public/Images/logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Cookies List</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Session</th>
+                </tr>
+            </thead>
+            <tbody>
+              <% if (searchQuery && searchQuery.length) { %>
+                  <% for (var i = 0; i < searchQuery.length; i++) { let search = searchQuery; %>
+                      <tr>
+                          <td class="place-name"><%= search %></td>
+                      </tr>
+                  <% } %>
+              <% } else { %>
+                  <tr>
+                      <td colspan="3">No products found.</td>
+                  </tr>
+              <% } %>
+          </tbody>
+        </table>
+        <a href="/placeListPage" class="btn btn-primary">Back to Place List</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
