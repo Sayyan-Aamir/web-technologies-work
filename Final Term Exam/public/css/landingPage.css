@@ -1,0 +1,413 @@
+ /* EXTRA CSS */
+  
+  .why-choose-us {
+    padding: 40px;
+    text-align: center;
+    border-radius: 6px;
+    color: black;
+    background-position: center;
+    position: relative;
+  }
+  
+  .why-choose-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 6px; /* Ensures the overlay follows the border radius of the section */
+    z-index: -1;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .feature-item {
+    width: 300px;
+    margin: 10px;
+    text-align: left;
+  }
+  
+  .icon-circle {
+    background-color: whitesmoke;
+    border-radius: 50%;
+    color: black;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  
+  .icon-circle img {
+    width: 30px;
+    height: 30px; 
+  }
+  
+  .feature-item h3 {
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  .feature-item p {
+    color: black;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .features {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .feature-item {
+      width: auto;
+      text-align: center;
+    }
+  
+    .icon-circle {
+      margin-bottom: 10px;
+    }
+  }
+  
+  
+  .features-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    margin: 20px;
+    
+  }
+  
+  .feature-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .feature-box:hover {
+    transform: scale(1.08); /* Adjust the scale value to your preference */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2); /* This adds a shadow to give a "lifted" effect */
+    z-index: 10; /* This ensures the hovered box rises above the others */
+  }
+  
+  .icon-bg {
+    background-color: #eee; /* Placeholder color */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon {
+    width: 50%;
+  }
+  
+  .feature-box h3 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .feature-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .explore-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #6200ee;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .explore-button:hover {
+    background-color: #3700b3;
+  }
+  
+  @media (max-width: 768px) {
+    .features-container {
+      flex-direction: column;
+    }
+  }
+  
+  
+  .about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white; /* Adjust the color to match your design */
+    color: black;
+  }
+  
+  .image-container {
+    margin-left: -15%;
+    background-position: center;
+    height: 80%;
+  }
+  
+  .content-container {
+    flex: 1;
+    padding: 20px;
+    max-width: 500px;
+  }
+  
+  .about-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .about-text {
+    margin-bottom: 20px;
+  }
+  
+  .read-more-button {
+    padding: 10px 20px;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    border-radius: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .read-more-button:hover {
+    background-color: white;
+    color: black; /* Adjust the hover color to match your design */
+  }
+  
+  .testimonials {
+    /* background-color: whitesmoke; */
+    text-align: center;
+    padding: 40px;
+    color: black;
+  }
+  
+  .testimonials h1 {
+    margin-bottom: 20px;
+  }
+  
+  .testimonial {
+    display: inline-block;
+    width: 22%;
+    margin: 10px;
+    background-color: #FFFFFF; /* For the white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .testimonial:hover {
+    transform: scale(1.08); /* Adjust the scale value to your preference */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2); /* This adds a shadow to give a "lifted" effect */
+    z-index: 10; /* This ensures the hovered box rises above the others */
+  }
+  
+  .testimonial img {
+    width: 80px; /* Adjust as needed */
+    height: 80px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the image round */
+    margin-bottom: 10px;
+    border: 2px solid #6200EA; /* Replace with the appropriate purple shade */
+  }
+  
+  .testimonial p {
+    font-size: 14px;
+    color: #333; /* Dark text color */
+    margin-bottom: 10px;
+  }
+  
+  .testimonial span {
+    font-weight: bold;
+    display: block; /* Makes the name appear on a new line */
+  }
+  
+  
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: whitesmoke
+  }
+  
+  .contact-info img {
+    max-width: 150px; 
+    margin: 5px 0;
+  }
+  
+  .contact-info {
+    max-width: 330px;
+    margin-left: 12%;
+  }
+  
+  .contact-info h2 {
+    margin: 10px 0;
+  }
+  
+  .contact-info p {
+    margin: 15px 0;
+  }
+  
+  .social-media a img {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+    border: 0px solid whitesmoke;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .social-media a img:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    z-index: 20;
+  }
+  .contact-links a {
+    font-size: 20px;
+    display: none;
+    margin: 5px 0;
+  }
+  
+  .map iframe {
+    border-radius: 8px;
+    border: none;
+    height: 300px; /* Adjust height as needed */
+    width: 700px; /* Adjust width as needed */
+    margin-left: 20px;
+  }
+  
+  /* Responsive layout adjustments */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+  
+    .map iframe {
+      width: 100%;
+    }
+  }
+  
+  .carousel {
+    padding: 2% 5%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .features-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .features-container img {
+    width: 250px; 
+    margin-right: 10px;
+  }
+  .carousel-caption {
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.carousel-indicators {
+    display: none;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  position: relative;
+  top: 80%;
+  left: 10%;
+  transform: translate(-20%, -10%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text {
+  color: white;
+  font-size: 22px;
+  padding: 16px 32px;
+}
+
+.custom-button {
+  border-radius: 28px;
+  border: none;
+  color: white;
+  background-color: black;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+header {
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.card {
+  border: none;
+}
+.card img {
+  border: none;
+  align-items: center;
+}
+.card-body {
+  text-align: left;
+}
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.card-text {
+  font-size: 1.2rem;
+  color: black;
+}
+.price {
+  font-size: 1.2rem;
+  color: black;
+}
+.original-price {
+  text-decoration: line-through;
+  color: #aaa;
+}
+.duration, .reviews {
+  font-size: 0.9rem;
+}
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff5f5f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}

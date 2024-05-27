@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firstflight Travels</title>
+    <link rel="icon" href="/public/Images/logo.png">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="/node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize search input from session data
+            var searchQuery = "<%= searchQuery %>";
+            if (searchQuery) {
+                $("#myInput1").val(searchQuery);
+                filterTable(searchQuery);
+            }
+
+            // Filter function
+            function filterTable(value) {
+                $("#myTable tr").each(function() {
+                    $(this).toggle($(this).find('.place-name').text().toLowerCase().indexOf(value) > -1);
+                });
+            }
+
+            // Handle search button click
+            $("#searchBtn").click(function() {
+                var value = $("#myInput1").val().toLowerCase();
+                $.post('/submit-search', { searchQuery: value }, function() {
+                    filterTable(value);
+                });
+            });
+
+            // Handle clear button click
+            $("#clearFilterBtn").click(function() {
+                $("#myInput1").val('');
+                $.post('/submit-search', { searchQuery: '' }, function() {
+                    $("#myTable tr").show();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="banner" style="background-color: white;height: 100%;">
+        <div class="content" id="home" style="background-color: white;height: 100%;">
+            <nav>
+                <img src="/public/Images/logo.png" class="logo" alt="Logo" title="FirstFlight Travels">
+                <ul class="navbar">
+                    <li>
+                      <a href="/">Home</a>
+                      <a href="/placeListPage">Locations</a>
+                      <a href="/packageList">Packages</a>
+                      <a href="/ContactUs">Contact Us</a>
+                      <a href="/AboutUs">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="container">
+                <h2 style="margin-top: 10%;">Place List</h2>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <input id="myInput1" type="text" placeholder="Place Name" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <!-- <button id="searchBtn" value="searchValue" class="custom-button w-100">Search</button> -->
+                        <form action="/submit-search" method="POST" style="display: flex; align-items: center;">
+                          <input id="myInput1" type="text" name="searchQuery" placeholder="Place Name" class="form-control">
+                          <button type="submit" id="searchBtn" class="custom-button w-100" style="margin-left: 10px;">Search</button>
+                      </form>
+                    </div>
+                    <div class="col-md-3">
+                        <button id="clearFilterBtn" class="custom-button w-100">Clear Filter</button>
+                    </div>
+                </div>
+
+                <br>
+                <div class="container mt-5">
+                    <button class="custom-button" style="margin-bottom: 2%;" onclick="location.href='/addPlace'">Add Place</button>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Place Name</th>
+                                <th>Country Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="myTable">
+                            <% if (products && products.length) { %>
+                                <% for (var i = 0; i < products.length; i++) { let product = products[i]; %>
+                                    <tr>
+                                        <td class="place-name"><%= product.PlaceNames %></td>
+                                        <td class="country-name"><%= product.CountryNames %></td>
+                                        <td>
+                                            <button class="btn btn-warning btn-sm update-btn" data-toggle="modal" data-target="#updatePlaceModal" data-id="<%= product._id %>">Update</button>
+                                            <form action="/delete-tour/<%= product._id %>" method="POST" style="display:inline;">
+                                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="3">No products found.</td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Total:</td>
+                                <td colspan="2"><%= total %></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- Update Place Modal -->
+                <div class="modal fade" id="updatePlaceModal" tabindex="-1" role="dialog" aria-labelledby="updatePlaceModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <form id="updatePlaceForm" action="/update-place" method="POST">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="updatePlaceModalLabel">Update Place</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="hidden" id="updatePlaceId" name="placeId">
+                                    <div class="form-group">
+                                        <label for="updatePlaceName">Place Name</label>
+                                        <input type="text" class="form-control" id="updatePlaceName" name="placeName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateCountryName">Country Name</label>
+                                        <input type="text" class="form-control" id="updateCountryName" name="countryName" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Update Place</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
